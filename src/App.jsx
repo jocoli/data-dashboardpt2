@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import{ Link } from 'react-router-dom';
 
 const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 
@@ -87,7 +88,9 @@ function App() {
       </div>
         <ul>
           {list.map((recipe)=> (
-            <li key={recipe.id}>{recipe.title}</li>
+            <li key={recipe.id}>
+            <Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link>  
+            </li>
           ))}
         </ul>
     </div>
